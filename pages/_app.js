@@ -1,6 +1,7 @@
 import { cache } from '@emotion/css'
 import { CacheProvider } from '@emotion/react'
 import GlobalStyles from './../styles/GlobalStyles'
+import './index.css'
 
 const App = ({ Component, pageProps }) => (
   <CacheProvider value={cache}>
