@@ -5,6 +5,7 @@ module.exports = {
         electric: '#db00ff',
         ribbon: '#0047ff',
         primary: '#dbdbdb',
+        neutral: '#fafafa',
       },
     },
   },
