@@ -1,44 +1,47 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import 'twin.macro'
+import Head from '/components/Head'
 
 const Submit = () => {
+  const initialValues = {
+    name: '',
+    email: '',
+    platform: '',
+    query: '',
+  }
+  const [formValues, setFormValues] = useState(initialValues)
+  //const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false)
+
+  const changeHandler = e => {
+    const { name, value } = e.target
+    setFormValues({ ...formValues, [name]: value })
+  }
+
+  const submitHandler = e => {
+    e.preventDefault()
+    setIsSubmit(true)
+    clearHandler()
+  }
+
+  const clearHandler = e => {
+    setFormValues(initialValues)
+  }
+
   return (
     <Fragment>
-      <div tw="flex flex-col pb-8 bg-neutral">
-        <div tw="p-20 pt-14 pb-6 bg-white">
-          <div tw="flex justify-between items-center">
-            <div>
-              <Link href="/">
-                <h1 tw="text-5xl font-bold cursor-pointer font-sans">
-                  Let's Help
-                </h1>
-              </Link>
-              <div tw="w-3/4">
-                <p tw="text-base text-gray-500 mt-2 w-max">
-                  Please fill this form to submit any queries you have.
-                </p>
-              </div>
-            </div>
-            <div tw="text-right">ICON</div>
-          </div>
-          <div tw="items-center flex justify-center">
-            <input
-              placeholder="Search stuff"
-              type="text"
-              tw="border mt-10 text-sm w-2/3 rounded-md p-4 hover:border-black "
-            ></input>
-          </div>
-        </div>
+      <Head />
+      <div tw="max-w-screen-2xl mx-auto pb-72 bg-neutral">
         <br></br>
-        <div tw="pl-20 text-xs flex space-x-2">
+        <div tw="pl-44 text-xs flex space-x-2">
           <Link href="/">
             <p tw="cursor-pointer">Home</p>
           </Link>
           <div>{'>'}</div>
           <p tw="text-purple-600">SUBMIT QUERIES</p>
         </div>
-        <div tw="flex flex-row pl-20 mt-2 w-auto space-x-80">
+        <div tw="flex flex-row pl-44 pr-44 pb-20 mt-2 w-auto space-x-32">
           <div tw="[>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full)">
             <div>
               <Link href="./Errors">
@@ -78,26 +81,48 @@ const Submit = () => {
           </div>
           <br></br>
           <div tw="flex border mx-auto pr-20 pt-4 pl-10 pb-10 rounded-2xl">
-            <form>
+            <form onSubmit={submitHandler}>
               <label>Name</label>
-              <input type="text" tw="border rounded-lg w-full bg-white"></input>
+              <input
+                name="name"
+                value={formValues.name}
+                type="text"
+                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
+                required
+                onChange={changeHandler}
+              ></input>
               <br></br>
               <br></br>
               <label>Email</label>
               <input
+                name="email"
+                value={formValues.email}
                 type="email"
-                tw="border rounded-lg w-full bg-white"
+                tw="border rounded-lg p-1 pr-2 pl-2 w-full bg-white"
+                required
+                onChange={changeHandler}
               ></input>
               <br></br>
               <br></br>
               <label>What do you use the platform for?</label>
-              <input type="text" tw="border rounded-lg w-full bg-white"></input>
+              <input
+                name="platform"
+                value={formValues.platform}
+                type="text"
+                tw="border rounded-lg p-1 pr-2 pl-2 w-full bg-white"
+                required
+                onChange={changeHandler}
+              ></input>
               <br></br>
               <br></br>
               <label>Please what is your query?</label>
               <input
+                name="query"
+                value={formValues.query}
                 type="text"
-                tw="border rounded-lg w-full h-28 bg-white align-top"
+                tw="border rounded-lg w-full p-1 pr-2 pl-2 h-28 bg-white align-top"
+                required
+                onChange={changeHandler}
               ></input>
               <br></br>
               <br></br>
@@ -107,7 +132,7 @@ const Submit = () => {
                 </div>
                 <br></br>
                 <div tw=" pl-8 rounded-sm p-4 text-sm text-purple-600">
-                  <button>Clear form</button>
+                  <button onClick={clearHandler}>Clear form</button>
                 </div>
               </div>
             </form>

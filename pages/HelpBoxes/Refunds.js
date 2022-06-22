@@ -1,44 +1,55 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import 'twin.macro'
+import Head from '../../components/Head'
+import Modal from '../../components/Modal'
+
+import { faXmark, faComments } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Refunds = () => {
+     const [modal, setModal] = useState()
+
+     const toggleModal = () => {
+       setModal(!modal)
+     }
+  const initialValues = {
+    nameVendor: '',
+    description: '',
+    complaint: '',
+  }
+
+  const [formValues, setFormValues] = useState(initialValues)
+  //const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false)
+
+  const changeHandler = e => {
+    const { name, value } = e.target
+    setFormValues({ ...formValues, [name]: value })
+  }
+
+  const submitHandler = e => {
+    e.preventDefault()
+    setIsSubmit(true)
+  }
+
+  const clearHandler = e => {
+    setFormValues(initialValues)
+  }
+
   return (
     <Fragment>
-      <div tw="flex flex-col pb-48 bg-neutral">
-        <div tw="p-20 pt-14 pb-6 bg-white">
-          <div tw="flex justify-between items-center">
-            <div>
-              <Link href="/">
-                <h1 tw="text-5xl font-bold cursor-pointer font-sans">
-                  Let's Help
-                </h1>
-              </Link>
-              <div tw="w-3/4">
-                <p tw="text-base w-max text-gray-500 mt-2">
-                  Complain about a job and/or apply for a refund.
-                </p>
-              </div>
-            </div>
-            <div tw="text-right">ICON</div>
-          </div>
-          <div tw="items-center flex justify-center">
-            <input
-              placeholder="Search stuff"
-              type="text"
-              tw="border mt-10 text-sm w-2/3 rounded-md p-4 hover:border-black "
-            ></input>
-          </div>
-        </div>
+      <Head />
+      <div tw="max-w-screen-2xl mx-auto pb-72 bg-neutral">
         <br></br>
-        <div tw="pl-20 text-xs flex space-x-2">
+        <div tw="pl-44 text-xs flex space-x-2">
           <Link href="/">
             <p tw="cursor-pointer">Home</p>
           </Link>
           <div>{'>'}</div>
           <p tw="text-purple-600">REFUNDS & COMPLAINTS</p>
         </div>
-        <div tw="flex flex-row pl-20 mt-2 w-auto space-x-80">
+        <div tw="flex flex-row pl-44 pr-44 pb-24 mt-2 w-auto space-x-32">
           <div tw="[>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full)">
             <div>
               <Link href="./Errors">
@@ -78,19 +89,37 @@ const Refunds = () => {
           </div>
           <br></br>
           <div tw="flex border mx-auto pr-20 pt-4 pl-10 pb-10 rounded-2xl">
-            <form>
+            <form onSubmit={submitHandler}>
               <label>Name of Vendor</label>
-              <input type="text" tw="border rounded-lg w-full bg-white"></input>
+              <input
+                name="nameVendor"
+                value={formValues.nameVendor}
+                required
+                type="text"
+                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
+                onChange={changeHandler}
+              ></input>
               <br></br>
               <br></br>
               <label>Description of job</label>
-              <input type="text" tw="border rounded-lg w-full bg-white"></input>
+              <input
+                name="description"
+                required
+                value={formValues.description}
+                type="text"
+                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
+                onChange={changeHandler}
+              ></input>
               <br></br>
               <br></br>
               <label>Please state your complaint here</label>
               <input
+                name="complaint"
+                required
+                value={formValues.complaint}
                 type="text"
-                tw="border rounded-lg w-full h-28 bg-white align-top"
+                tw="border rounded-lg p-1 pr-2 pl-2 w-full h-28 bg-white align-top"
+                onChange={changeHandler}
               ></input>
               <br></br>
               <br></br>
@@ -105,11 +134,33 @@ const Refunds = () => {
                 </div>
                 <br></br>
                 <div tw=" pl-8 rounded-sm p-4 text-sm text-purple-600">
-                  <button>Clear form</button>
+                  <button onClick={clearHandler}>Clear form</button>
                 </div>
               </div>
             </form>
           </div>
+        </div>
+        <div tw="mr-44 border mt-20 items-end justify-end flex">
+          <button onClick={toggleModal}>
+            <FontAwesomeIcon
+              tw="fixed text-4xl text-purple-600"
+              icon={faComments}
+            />
+          </button>
+          {modal && (
+            <div tw="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-end items-end">
+              <div tw="bg-white border w-3/12 h-3/6 rounded-xl mr-10 mb-5 items-center justify-center">
+                <div tw="flex justify-between mx-4 my-4">
+                  <Modal />
+                  <div>
+                    <button onClick={toggleModal}>
+                      <FontAwesomeIcon tw="text-lg" icon={faXmark} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </Fragment>
