@@ -32,7 +32,7 @@ const Delays = () => {
   return (
     <Fragment>
       <Head />
-      <div tw="max-w-screen-2xl mx-auto pb-72 bg-neutral">
+      <div tw="max-w-screen-2xl mx-auto pb-44 bg-neutral">
         <br></br>
         <div tw="pl-44 text-xs flex space-x-2">
           <Link href="/">
@@ -41,7 +41,7 @@ const Delays = () => {
           <div>{'>'}</div>
           <p tw="text-purple-600">DELAYS IN FULFILMENT</p>
         </div>
-        <div tw="flex flex-row pl-44 pr-44 pb-20 mt-2 w-auto space-x-32">
+        <div tw="flex flex-row pl-44 pr-44 pb-4 mt-2 w-auto space-x-32">
           <div tw="[>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full)">
             <div>
               <Link href="./Errors">
@@ -80,75 +80,54 @@ const Delays = () => {
             </div>
           </div>
           <br></br>
-          <div tw="flex border mx-auto pr-20 pt-4 pl-10 pb-10 rounded-2xl">
-            <form onSubmit={submitHandler}>
-              <label>Start date</label>
-              <input
-                name="startDate"
-                value={formValues.startDate}
-                type="date"
-                required
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-              <label>Subject area</label>
-              <input
-                name="subject"
-                value={formValues.subject}
-                type="text"
-                required
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-              <label>Initial due date</label>
-              <input
-                name="dueDate"
-                value={formValues.dueDate}
-                type="date"
-                required
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-              <label>Last time of contact with vendor</label>
-              <input
-                name="contact"
-                value={formValues.contact}
-                required
-                type="text"
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-              <label>Name of vendor</label>
-              <input
-                name="nameVendor"
-                value={formValues.nameVendor}
-                required
-                type="text"
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-
-              <div tw="flex space-x-36">
-                <div tw="text-white bg-purple-600 flex justify-center items-center border p-3 pr-8 pl-8 rounded-2xl text-sm">
-                  <button>Submit</button>
-                </div>
-                <br></br>
-                <div tw=" pl-8 rounded-sm p-4 text-sm text-purple-600">
-                  <button onClick={clearHandler}>Clear form</button>
-                </div>
+          <div tw="[>div]:(cursor-pointer m-2 h-auto p-4 border-black rounded-xl w-11/12 hover:shadow) bg-white flex flex-col justify-between rounded-xl w-8/12">
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">Adding a new Bank account</h3>
+                <p tw="text-sm text-gray-400">15 Articles</p>
               </div>
-            </form>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">
+                  Upgrading from Individual Account to Business
+                </h3>
+                <p tw="text-sm text-gray-400">13 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">Changing your freelancer</h3>
+                <p tw="text-sm text-gray-400">4 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">"I got charged twice!"</h3>
+                <p tw="text-sm text-gray-400">5 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">How long does it take to withdraw?</h3>
+                <p tw="text-sm text-gray-400">3 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div tw="mb-2">
+                <h3 tw="text-lg">Why aren't there recurring gigs?</h3>
+                <p tw="text-sm text-gray-400">28 Articles</p>
+              </div>
+            </Link>
           </div>
+        </div>
+        <div tw="flex flex-col items-end justify-end w-full pr-[185px]">
+          <p>Can't find what you're looking for?</p>
+          <Link href="../Support/SupportDelay">
+            <p tw="underline cursor-pointer font-bold text-purple-600">
+              Contact support
+            </p>
+          </Link>
         </div>
       </div>
     </Fragment>

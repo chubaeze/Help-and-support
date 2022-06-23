@@ -40,7 +40,7 @@ const Errors = () => {
   return (
     <Fragment>
       <Head />
-      <div tw="max-w-screen-2xl mx-auto pb-72 bg-neutral">
+      <div tw="max-w-screen-2xl mx-auto pb-44 bg-neutral">
         <br></br>
         <div tw="pl-44 text-xs flex space-x-2">
           <Link href="/">
@@ -49,7 +49,7 @@ const Errors = () => {
           <div>{'>'}</div>
           <p tw="text-purple-600">ERRORS WITH ORDERS</p>
         </div>
-        <div tw="flex flex-row pl-44 pr-44 pb-24 mt-2 w-auto space-x-16">
+        <div tw="flex flex-row pl-44 pr-44 pb-4 mt-2 w-auto space-x-32">
           <div tw="[>div]:( pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full)">
             <div tw="bg-purple-100">
               <Link href="./Errors">
@@ -88,76 +88,54 @@ const Errors = () => {
             </div>
           </div>
           <br></br>
-          <div tw=" [>div]:(space-x-1 mb-1) flex flex-col mx-auto pr-20 pt-4 pl-10 rounded-2xl">
-            <div>
-              <input
-                name="first"
-                value={checkValues.first}
-                onChange={checkHandler}
-                type="checkbox"
-              ></input>
-              <label>Past delivery date?</label>
-            </div>
-            <div>
-              <input
-                name="second"
-                value={checkValues.second}
-                onChange={checkHandler}
-                type="checkbox"
-              ></input>
-              <label>
-                Was the order delivered perceived to be below the expected
-                experience level?
-              </label>
-            </div>
-            <div>
-              <input
-                name="third"
-                value={checkValues.third}
-                onChange={checkHandler}
-                type="checkbox"
-              ></input>
-              <label>No reply from your vendor?</label>
-            </div>
-            <div>
-              <input
-                name="fourth"
-                value={checkValues.fourth}
-                onChange={checkHandler}
-                type="checkbox"
-              ></input>
-              <label>Missed step(s) during order cycle?</label>
-            </div>
-            <div>
-              <input
-                name="fifth"
-                value={checkValues.fifth}
-                onChange={checkHandler}
-                type="checkbox"
-              ></input>
-              <label>Missing item(s) or service(s) in order delivery?</label>
-            </div>
-            <br></br>
-            <div tw="flex flex-col">
-              <label>
-                If you have other errors with your orders not listed above
-                please let us know below.
-              </label>
-              <input type="text" tw="h-28 p-1 pr-2 pl-2 rounded-2xl"></input>
-            </div>
-            <br></br>
-            <div tw="flex justify-between">
-              <button
-                onClick={submitHandler}
-                tw="border p-1 pr-4 pl-4 rounded-lg bg-purple-600 text-white"
-              >
-                Next
-              </button>
-              <button onClick={clearHandler} tw="text-purple-600">
-                Clear choices
-              </button>
-            </div>
+          <div tw="[>div]:(cursor-pointer m-2 h-auto p-4 border-black rounded-xl w-11/12 hover:shadow) bg-white flex flex-col justify-between rounded-xl w-8/12">
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">Adding a new Bank account</h3>
+                <p tw="text-sm text-gray-400">15 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">
+                  Upgrading from Individual Account to Business
+                </h3>
+                <p tw="text-sm text-gray-400">13 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">Changing your freelancer</h3>
+                <p tw="text-sm text-gray-400">4 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">"I got charged twice!"</h3>
+                <p tw="text-sm text-gray-400">5 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">How long does it take to withdraw?</h3>
+                <p tw="text-sm text-gray-400">3 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div tw="mb-2">
+                <h3 tw="text-lg">Why aren't there recurring gigs?</h3>
+                <p tw="text-sm text-gray-400">28 Articles</p>
+              </div>
+            </Link>
           </div>
+        </div>
+        <div tw="flex flex-col items-end justify-end w-full pr-[185px]">
+          <p>Can't find what you're looking for?</p>
+          <Link href="../Support/SupportError">
+            <p tw="underline cursor-pointer font-bold text-purple-600">
+              Contact support
+            </p>
+          </Link>
         </div>
       </div>
     </Fragment>

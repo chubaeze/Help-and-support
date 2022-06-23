@@ -5,6 +5,7 @@ import Modal from './Modal'
 
 import { faXmark, faComments } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Portal from './Portal'
 
 const Head = () => {
   const [modal, setModal] = useState()
@@ -30,13 +31,16 @@ const Head = () => {
         </div>
         <div>
           <button onClick={toggleModal}>
-            <FontAwesomeIcon tw="fixed text-4xl text-purple-600" icon={faComments} />
+            <FontAwesomeIcon tw="text-4xl text-purple-600" icon={faComments} />
           </button>
           {modal && (
             <div tw=" fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-end items-end">
               <div tw="bg-white border w-3/12 h-3/6 rounded-xl mr-10 mb-5 items-center justify-center">
                 <div tw="flex justify-between mx-4 my-4">
-                  <Modal />
+                  <Portal>
+                    <Modal />
+                  </Portal>
+
                   <div>
                     <button onClick={toggleModal}>
                       <FontAwesomeIcon tw="text-lg" icon={faXmark} />

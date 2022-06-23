@@ -8,7 +8,7 @@ const Account = () => {
   return (
     <Fragment>
       <Head />
-      <div tw="max-w-screen-2xl mx-auto pb-72 bg-neutral">
+      <div tw="max-w-screen-2xl mx-auto pb-44 bg-neutral">
         <br></br>
         <div tw="pl-44 text-xs flex space-x-2">
           <Link href="/">
@@ -17,7 +17,7 @@ const Account = () => {
           <div>{'>'}</div>
           <p tw="text-purple-600">ACCOUNT & LOGIN</p>
         </div>
-        <div tw="mt-2 pl-44 pr-44 pb-24 flex w-auto">
+        <div tw="mt-2 pl-44 pr-44 pb-4 flex w-auto space-x-32">
           <div tw="[>div]:(border pl-5 pr-10 pb-4 pt-4 rounded-xl w-full)">
             <div>
               <Link href="./Errors">
@@ -55,33 +55,55 @@ const Account = () => {
               </Link>
             </div>
           </div>
-          <div>
-            <div tw="flex justify-center items-center mt-5 text-2xl font-bold">
-              What part of Account & Log In do you need assistance in?
-            </div>
-            <div tw=" [>div]:(w-44 flex items-center justify-center border cursor-pointer p-7 rounded-xl bg-white) gap-2 p-20 pt-10 grid grid-cols-1 md:(grid-cols-2 grid-rows-2) lg:(grid-cols-4 grid-rows-2)">
-              <Link href="./AccountBoxes/Recover">
-                <div>
-                  <h2 tw="text-sm font-bold ">Recover Password</h2>
-                </div>
-              </Link>
-              <Link href="./AccountBoxes/Log">
-                <div>
-                  <h2 tw="text-sm font-bold">Log In Details</h2>
-                </div>
-              </Link>
-              <Link href="./AccountBoxes/Pay">
-                <div>
-                  <h2 tw="text-sm font-bold">Payment Details</h2>
-                </div>
-              </Link>
-              <Link href="./AccountBoxes/Manage">
-                <div>
-                  <h2 tw="text-sm font-bold">Manage Account</h2>
-                </div>
-              </Link>
-            </div>
+          <br></br>
+          <div tw="[>div]:(cursor-pointer m-2 h-auto p-4 border-black rounded-xl w-11/12 hover:shadow) bg-white flex flex-col justify-between rounded-xl w-8/12">
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">Adding a new Bank account</h3>
+                <p tw="text-sm text-gray-400">15 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">
+                  Upgrading from Individual Account to Business
+                </h3>
+                <p tw="text-sm text-gray-400">13 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">Changing your freelancer</h3>
+                <p tw="text-sm text-gray-400">4 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">"I got charged twice!"</h3>
+                <p tw="text-sm text-gray-400">5 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">How long does it take to withdraw?</h3>
+                <p tw="text-sm text-gray-400">3 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div tw="mb-2">
+                <h3 tw="text-lg">Why aren't there recurring gigs?</h3>
+                <p tw="text-sm text-gray-400">28 Articles</p>
+              </div>
+            </Link>
           </div>
+        </div>
+        <div tw="flex flex-col items-end justify-end w-full pr-[185px]">
+          <p>Can't find what you're looking for?</p>
+          <Link href="../Support/SupportAccount">
+            <p tw="underline cursor-pointer font-bold text-purple-600">
+              Contact support
+            </p>
+          </Link>
         </div>
       </div>
     </Fragment>

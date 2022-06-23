@@ -55,7 +55,7 @@ const Log = () => {
               <div tw="flex space-x-5">
                 <input
                   type="email"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-72"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-72 hover:border-purple-600 focus:outline-none focus:border-purple-600"
                   placeholder="chubaezeigbo@yahoo.com"
                 ></input>
                 <button tw="border bg-purple-600 text-white p-1 pl-9 pr-9 rounded-lg">
@@ -67,7 +67,7 @@ const Log = () => {
               <div tw="flex flex-row space-x-5">
                 <input
                   type="password"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-72"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-72 hover:border-purple-600 focus:outline-none focus:border-purple-600"
                   placeholder="********"
                 ></input>
                 <button tw="border bg-purple-600 text-white p-1 pl-9 pr-9 rounded-lg">

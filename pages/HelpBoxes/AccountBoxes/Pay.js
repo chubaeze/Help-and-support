@@ -55,36 +55,36 @@ const Pay = () => {
               <div tw="flex space-x-5">
                 <input
                   type="text"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-full"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 ></input>
               </div>
 
               <div tw="flex space-x-5">
-                <input tw="pl-2 border text-center text-left items-center rounded-lg w-full"></input>
+                <input tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"></input>
               </div>
 
               <div tw="flex flex-row space-x-5">
-                <input tw="pl-2 border text-center text-left items-center rounded-lg w-full"></input>
+                <input tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"></input>
               </div>
 
               <div tw="flex flex-row space-x-5">
                 <input
                   type="date"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-full"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 ></input>
               </div>
 
               <div tw="flex flex-row space-x-5">
                 <input
                   type="tel"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-full"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 ></input>
               </div>
 
               <div tw="flex flex-row space-x-5">
                 <input
                   type="email"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-full"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 ></input>
               </div>
             </div>

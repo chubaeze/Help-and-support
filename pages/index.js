@@ -2,7 +2,6 @@ import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import 'twin.macro'
 import Head from '../components/Head'
-import Modal from '../components/Modal'
 
 import {
   faHandshakeSlash,
@@ -18,24 +17,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Home() {
 
-    const [modal, setModal] = useState()
-
-    const toggleModal = () => {
-      setModal(!modal)
-    }
   return (
     <Fragment>
       <Head />
-      <div tw="max-w-screen-2xl mx-auto pb-40 bg-neutral">
-        
-        <div tw="pt-3 flex justify-center items-center">
-          <Link href="../HelpBoxes/Articles">
-            <h2 tw="font-headings text-blue-400 underline cursor-pointer">
-              Help Articles
-            </h2>
-          </Link>
-        </div>
-        <div tw=" [>div]:(max-w-lg m-3 border cursor-pointer pt-16 pr-5 pl-6 pb-5 rounded-xl bg-white) p-44 pt-14 pb-28 grid grid-cols-1 gap-2 md:(grid-cols-2 grid-rows-3) lg:(grid-cols-3 grid-rows-2)">
+      <div tw="max-w-screen-2xl mx-auto pb-72 bg-neutral">
+        <div tw=" [>div]:(max-w-lg m-3 border cursor-pointer pt-16 pr-5 pl-6 pb-5 rounded-xl bg-white) p-44 pt-14 pb-20 grid grid-cols-1 gap-2 md:(grid-cols-2 grid-rows-3) lg:(grid-cols-3 grid-rows-2)">
           <Link href="../HelpBoxes/Vendor">
             <div tw="flex justify-between">
               <div>
@@ -122,32 +108,13 @@ function Home() {
         <br></br>
         <div tw="text-xl flex justify-center items-center">
           No luck finding what you need? Click here for our
-          <a tw="text-blue-400" href="../HelpBoxes/FAQ">
+          <div tw='p-1'>
+          <a tw="text-blue-400 underline" href="../HelpBoxes/FAQ">
             FAQs
           </a>
+          </div>
         </div>
-        <div tw='mr-44 border mt-20 items-end justify-end flex'>
-          <button onClick={toggleModal}>
-            <FontAwesomeIcon
-              tw="fixed text-4xl text-purple-600"
-              icon={faComments}
-            />
-          </button>
-          {modal && (
-            <div tw="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-end items-end">
-              <div tw="bg-white border w-3/12 h-3/6 rounded-xl mr-10 mb-5 items-center justify-center">
-                <div tw="flex justify-between mx-4 my-4">
-                  <Modal />
-                  <div>
-                    <button onClick={toggleModal}>
-                      <FontAwesomeIcon tw="text-lg" icon={faXmark} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
+      
       </div>
     </Fragment>
   )

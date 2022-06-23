@@ -57,7 +57,7 @@ const Recover = () => {
             onSubmit={clickHandler}
             tw="flex flex-col pr-20 pt-4 pl-10 pb-10 rounded-2xl "
           >
-            <div tw='w-2/3 flex items-center justify-center'>
+            <div tw="w-2/3 flex items-center justify-center">
               <p tw="text-xl">
                 Please input your registered email for this account and a
                 password reset link will be sent to you.
@@ -67,7 +67,11 @@ const Recover = () => {
             <br></br>
             <br></br>
             <label tw="font-bold ">Email</label>
-            <input type="email" required tw="border w-4/6 rounded-xl"></input>
+            <input
+              type="email"
+              required
+              tw="border w-4/6 rounded-xl hover:border-purple-600 focus:outline-none focus:border-purple-600"
+            ></input>
             <br></br>
             <div>
               <button tw="border p-2 pl-6 pr-6 rounded-xl bg-purple-600 text-white">

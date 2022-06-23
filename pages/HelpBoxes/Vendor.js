@@ -8,11 +8,11 @@ import { faXmark, faComments } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Vendor = () => {
-   const [modal, setModal] = useState()
+  const [modal, setModal] = useState()
 
-   const toggleModal = () => {
-     setModal(!modal)
-   }
+  const toggleModal = () => {
+    setModal(!modal)
+  }
   const initialValues = {
     nameVendor: '',
     category: '',
@@ -117,107 +117,54 @@ const Vendor = () => {
             </div>
           </div>
           <br></br>
-          <div tw="flex border mx-auto pr-20 pt-4 pl-10 rounded-2xl">
-            <form onSubmit={submitHandler}>
-              <label>Name of Vendor</label>
-              <input
-                name="nameVendor"
-                type="text"
-                value={formValues.nameVendor}
-                required
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-
-              <br></br>
-              <br></br>
-              <label>Category of job</label>
-              <input
-                name="category"
-                type="text"
-                value={formValues.category}
-                required
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-              <label>Description of job</label>
-              <input
-                name="description"
-                type="text"
-                value={formValues.description}
-                required
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-              <label>Method(s) of communication</label>
-              <input
-                name="method"
-                type="text"
-                value={formValues.method}
-                required
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-              <label>Due date</label>
-              <input
-                name="due"
-                type="date"
-                value={formValues.due}
-                required
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-              <label>Description of the situation</label>
-              <input
-                name="desSit"
-                type="text"
-                value={formValues.desSit}
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full h-28 bg-white align-top"
-                onChange={changeHandler}
-              ></input>
-              <br></br>
-              <br></br>
-              <div tw="flex space-x-36">
-                <div tw="text-white bg-purple-600 flex justify-center items-center border p-3 pr-8 pl-8 rounded-2xl text-sm">
-                  <button type="submit">Submit</button>
-                </div>
-                <br></br>
-                <div tw=" pl-8 rounded-sm p-4 text-sm text-purple-600">
-                  <button onClick={clearHandler}>Clear form</button>
-                </div>
+          <div tw="[>div]:(cursor-pointer m-2 h-auto p-4 border-black rounded-xl w-11/12 hover:shadow) bg-white flex flex-col justify-between rounded-xl w-8/12">
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">Adding a new Bank account</h3>
+                <p tw="text-sm text-gray-400">15 Articles</p>
               </div>
-            </form>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">
+                  Upgrading from Individual Account to Business
+                </h3>
+                <p tw="text-sm text-gray-400">13 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">Changing your freelancer</h3>
+                <p tw="text-sm text-gray-400">4 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">"I got charged twice!"</h3>
+                <p tw="text-sm text-gray-400">5 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div>
+                <h3 tw="text-lg">How long does it take to withdraw?</h3>
+                <p tw="text-sm text-gray-400">3 Articles</p>
+              </div>
+            </Link>
+            <Link href="/">
+              <div tw="mb-2">
+                <h3 tw="text-lg">Why aren't there recurring gigs?</h3>
+                <p tw="text-sm text-gray-400">28 Articles</p>
+              </div>
+            </Link>
           </div>
         </div>
-        <div tw="mr-44 mt-20 items-end justify-end flex">
-          <button onClick={toggleModal}>
-            <FontAwesomeIcon
-              tw="fixed text-4xl text-purple-600"
-              icon={faComments}
-            />
-          </button>
-          {modal && (
-            <div tw="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-end items-end">
-              <div tw="bg-white border w-3/12 h-3/6 rounded-xl mr-10 mb-5 items-center justify-center">
-                <div tw="flex justify-between mx-4 my-4">
-                  <Modal />
-                  <div>
-                    <button onClick={toggleModal}>
-                      <FontAwesomeIcon tw="text-lg" icon={faXmark} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+        <div tw="flex flex-col items-end justify-end w-full pr-[185px]">
+          <p>Can't find what you're looking for?</p>
+          <Link href="../Support/SupportVendor">
+            <p tw="underline cursor-pointer font-bold text-purple-600">
+              Contact support
+            </p>
+          </Link>
         </div>
       </div>
     </Fragment>

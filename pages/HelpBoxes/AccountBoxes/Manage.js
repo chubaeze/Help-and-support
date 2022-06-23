@@ -56,7 +56,7 @@ const Manage = () => {
                 <input
                   type="email"
                   placeholder="Chuba"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-full"
+                  tw="pl-2 border text-center border text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 ></input>
                 <button tw="border bg-purple-600 text-white p-1 pl-9 pr-9 rounded-lg">
                   Edit
@@ -68,7 +68,7 @@ const Manage = () => {
                 <input
                   type="password"
                   placeholder="Ezeigbo"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-full"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 ></input>
                 <button tw="border bg-purple-600 text-white p-1 pl-9 pr-9 rounded-lg">
                   Edit
@@ -80,7 +80,7 @@ const Manage = () => {
                 <input
                   type="date"
                   placeholder="29/04/1999"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-full"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 ></input>
                 <button tw="border bg-purple-600 text-white p-1 pl-9 pr-9 rounded-lg">
                   Edit
@@ -92,7 +92,7 @@ const Manage = () => {
                 <input
                   type="tel"
                   placeholder="07490284884"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-full"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 ></input>
                 <button tw="border bg-purple-600 text-white p-1 pl-9 pr-9 rounded-lg">
                   Edit
@@ -104,7 +104,7 @@ const Manage = () => {
                 <input
                   type="email"
                   placeholder="chubaezeigbo@gmail.com"
-                  tw="pl-2 border text-center text-left items-center rounded-lg w-full"
+                  tw="pl-2 border text-center text-left items-center rounded-lg w-full hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 ></input>
                 <button tw="border bg-purple-600 text-white p-1 pl-9 pr-9 rounded-lg">
                   Edit
