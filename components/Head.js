@@ -1,20 +1,52 @@
-import { Fragment, useState } from 'react'
 import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 import 'twin.macro'
 import Modal from './Modal'
+import DATA from './data.json'
 
-import { faXmark, faComments } from '@fortawesome/free-solid-svg-icons'
+import {
+  faComments,
+  faXmark,
+  faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Portal from './Portal'
 
 const Head = () => {
+  const inputRef = useRef(null)
+
+  useEffect(() => {
+    inputRef.current.focus()
+  },[])
+
   const [modal, setModal] = useState()
+  const [filteredData, setFilteredData] = useState([])
+  const [wordEntered, setWordEntered] = useState('')
 
   const toggleModal = () => {
     setModal(!modal)
   }
+
+  const changeHandler = event => {
+    const searchWord = event.target.value
+    setWordEntered(searchWord)
+    const newFilter = DATA.filter(value => {
+      return value.title.toLowerCase().includes(searchWord.toLowerCase())
+    })
+    if (searchWord === '') {
+      setFilteredData([])
+    } else {
+      setFilteredData(newFilter)
+    }
+  }
+
+  const clearInput = () => {
+    setFilteredData([])
+    setWordEntered('')
+  }
+
   return (
-    <div tw="p-44 max-w-screen-2xl mx-auto pt-14 pb-6 bg-white">
+    <div tw="p-[6%] max-w-screen-2xl mx-auto pb-6 bg-white lg:(p-10 pt-14)">
       <div tw=" flex justify-between items-center">
         <div>
           <Link href="/">
@@ -34,30 +66,51 @@ const Head = () => {
             <FontAwesomeIcon tw="text-4xl text-purple-600" icon={faComments} />
           </button>
           {modal && (
-            <div tw=" fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-end items-end">
-              <div tw="bg-white border w-3/12 h-3/6 rounded-xl mr-10 mb-5 items-center justify-center">
-                <div tw="flex justify-between mx-4 my-4">
-                  <Portal>
-                    <Modal />
-                  </Portal>
-
-                  <div>
-                    <button onClick={toggleModal}>
-                      <FontAwesomeIcon tw="text-lg" icon={faXmark} />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Portal>
+              <Modal closeModal={toggleModal} />
+            </Portal>
           )}
         </div>
       </div>
-      <div tw="items-center flex justify-center">
-        <input
-          placeholder="Search stuff"
-          type="text"
-          tw="border mt-10 text-sm w-2/3 rounded-md p-4 hover:border-black "
-        ></input>
+      <div tw="items-center w-[1210px] flex flex-col justify-center">
+        <div tw="w-2/3 mt-10 border h-[60px] rounded-md items-center flex justify-center hover:border-purple-600 focus:outline-none focus:border-purple-600">
+          <input
+            placeholder="Search stuff"
+            type="text"
+            tw=" text-sm focus:outline-none w-screen p-4 lg:(w-screen)"
+            value={wordEntered}
+            onChange={changeHandler}
+            ref={inputRef}
+          ></input>
+          {filteredData.length === 0 ? (
+            <FontAwesomeIcon
+              tw="text-base text-purple-600 pr-4"
+              icon={faMagnifyingGlass}
+            />
+          ) : (
+            <FontAwesomeIcon
+              tw="text-base text-purple-600 pr-4 cursor-pointer"
+              icon={faXmark}
+              onClick={clearInput}
+            />
+          )}
+        </div>
+        {filteredData.length != 0 && (
+          <div tw=" w-screen lg:(mt-[2px] w-2/3) border rounded-md pt-2 h-[100px] overflow-hidden overflow-y-auto scrollbar-hide bg-white ">
+            {filteredData.slice(0, 15).map((val, key) => {
+              return (
+                <a
+                  tw="w-[100%] h-[40px] hover:bg-gray-100 pl-4 flex items-center text-black"
+                  href={val.link}
+                >
+                  <p tw="w-[100%] h-[40px] underline text-blue-600 flex items-center">
+                    {val.title} ...in {val.category}
+                  </p>
+                </a>
+              )
+            })}
+          </div>
+        )}
       </div>
     </div>
   )

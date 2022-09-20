@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import 'twin.macro'
-import Head from '/components/Head'
+import HeadLess from '../../../components/HeadNoSearch'
 
 const Recover = () => {
   const clickHandler = e => {
@@ -10,10 +10,10 @@ const Recover = () => {
 
   return (
     <Fragment>
-      <Head />
-      <div tw="max-w-screen-2xl mx-auto pb-80 bg-neutral">
+      <HeadLess />
+      <div tw="max-w-screen-2xl mx-auto bg-neutral pb-[65%] lg:(pb-56)">
         <br></br>
-        <div tw="pl-44 text-xs flex space-x-2">
+        <div tw="pl-10 text-xs flex space-x-1 mb-3 lg:(pl-44 text-xs flex space-x-2)">
           <Link href="/">
             <p tw="cursor-pointer">Home</p>
           </Link>
@@ -26,8 +26,8 @@ const Recover = () => {
             <p tw="text-purple-600">RECOVER PASSWORD</p>
           </Link>
         </div>
-        <div tw="flex flex-row pl-44 pr-44 pb-56 mt-2 w-auto space-x-24">
-          <div tw="[>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-56)">
+        <div tw="pl-10 pr-10 flex space-x-1 lg:(pl-44 mt-2 pb-4 w-screen flex flex-row space-x-32)">
+          <div tw="hidden md:(block) lg:([>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-56))">
             <div tw="bg-purple-100">
               <Link href="./Recover">
                 <label tw="cursor-pointer">RECOVER PASSWORD</label>
@@ -53,32 +53,34 @@ const Recover = () => {
             </div>
           </div>
           <br></br>
-          <form
-            onSubmit={clickHandler}
-            tw="flex flex-col pr-20 pt-4 pl-10 pb-10 rounded-2xl "
-          >
-            <div tw="w-2/3 flex items-center justify-center">
-              <p tw="text-xl">
-                Please input your registered email for this account and a
-                password reset link will be sent to you.
-              </p>
-            </div>
+          <div tw='w-[500px] border'>
+            <form
+              onSubmit={clickHandler}
+              tw="flex flex-col lg:(pr-20 pt-4 pl-10 pb-10) rounded-2xl "
+            >
+              <div tw="lg:(w-80 text-xl) text-sm flex items-center justify-center">
+                <p tw="">
+                  Please input your registered email for this account and a
+                  password reset link will be sent to you.
+                </p>
+              </div>
 
-            <br></br>
-            <br></br>
-            <label tw="font-bold ">Email</label>
-            <input
-              type="email"
-              required
-              tw="border w-4/6 rounded-xl hover:border-purple-600 focus:outline-none focus:border-purple-600"
-            ></input>
-            <br></br>
-            <div>
-              <button tw="border p-2 pl-6 pr-6 rounded-xl bg-purple-600 text-white">
-                Send me my reset link
-              </button>
-            </div>
-          </form>
+              <br></br>
+              <br></br>
+              <label tw="font-bold text-sm lg:(text-base)">Email</label>
+              <input
+                type="email"
+                required
+                tw="border lg:(w-4/6) rounded-xl hover:border-purple-600 focus:outline-none focus:border-purple-600"
+              ></input>
+              <br></br>
+              <div>
+                <button tw="border lg:(text-base) text-sm p-2 pl-6 pr-6 rounded-xl bg-purple-600 text-white">
+                  Send me my reset link
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </Fragment>

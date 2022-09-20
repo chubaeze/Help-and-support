@@ -1,8 +1,7 @@
 import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import 'twin.macro'
-import Head from '../../components/Head'
-import Modal from '../../components/Modal'
+import HeadLess from '../../components/HeadNoSearch'
 
 import { faXmark, faComments } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -68,10 +67,10 @@ const SupportVendor = () => {
 
   return (
     <Fragment>
-      <Head />
-      <div tw="max-w-screen-2xl mx-auto pb-44 bg-neutral">
+      <HeadLess />
+      <div tw="max-w-screen-2xl mx-auto bg-neutral lg:(pb-10)">
         <br></br>
-        <div tw="pl-44 text-xs flex space-x-2">
+        <div tw="pl-10 text-xs flex space-x-1 mb-3 lg:(pl-44 text-xs flex space-x-2)">
           <Link href="/">
             <p tw="cursor-pointer">Home</p>
           </Link>
@@ -80,8 +79,8 @@ const SupportVendor = () => {
           <div>{'>'}</div>
           <p tw="text-purple-600">CONTACT SUPPORT</p>
         </div>
-        <div tw="flex flex-row pl-44 pr-44 pb-4 mt-2 w-auto space-x-32">
-          <div tw="[>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full)">
+        <div tw="pl-10 pr-10 flex space-x-1 lg:(pl-44 mt-2 pb-4 w-auto flex flex-row space-x-32)">
+          <div tw="hidden md:(block) lg:([>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full))">
             <div>
               <Link href="../HelpBoxes/Errors">
                 <label tw="cursor-pointer">ERRORS WITH ORDERS</label>
@@ -120,7 +119,7 @@ const SupportVendor = () => {
           </div>
           <br></br>
 
-          <div tw="flex border mx-auto pr-20 pt-4 pl-10 rounded-2xl">
+          <div tw="lg:(flex border mx-auto pr-20 pt-4 pl-10 rounded-2xl)">
             <form onSubmit={submitHandler}>
               <label>Name of Vendor</label>
               <input
@@ -183,17 +182,17 @@ const SupportVendor = () => {
                 name="desSit"
                 type="text"
                 value={formValues.desSit}
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full h-28 bg-white align-top hover:border-purple-600 focus:outline-none focus:border-purple-600"
+                tw="border p-1 pr-2 pl-2 rounded-lg w-full h-20 lg:(h-28) bg-white align-top hover:border-purple-600 focus:outline-none focus:border-purple-600"
                 onChange={changeHandler}
               ></input>
               <br></br>
               <br></br>
-              <div tw="flex space-x-36">
-                <div tw="text-white bg-purple-600 flex justify-center items-center border p-3 pr-8 pl-8 rounded-2xl text-sm">
+              <div tw="flex justify-between">
+                <div tw="text-white bg-purple-600 flex justify-center items-center border rounded-2xl text-xs p-2 pr-4 pl-4 lg:(text-sm p-3 pr-8 pl-8)">
                   <button type="submit">Submit</button>
                 </div>
                 <br></br>
-                <div tw=" pl-8 rounded-sm p-4 text-sm text-purple-600">
+                <div tw="rounded-sm text-xs p-2 pl-4 pt-3 lg:(text-sm p-4 pl-8) text-purple-600">
                   <button onClick={clearHandler}>Clear form</button>
                 </div>
               </div>

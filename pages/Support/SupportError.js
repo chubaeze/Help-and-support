@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import 'twin.macro'
-import Head from '/components/Head'
+import HeadLess from '../../components/HeadNoSearch'
 
 const SupportError = () => {
   const initialValues = {
@@ -39,10 +39,10 @@ const SupportError = () => {
 
   return (
     <Fragment>
-      <Head />
-      <div tw="max-w-screen-2xl mx-auto pb-72 bg-neutral">
+      <HeadLess />
+      <div tw="max-w-screen-2xl mx-auto bg-neutral lg:(pb-10)">
         <br></br>
-        <div tw="pl-44 text-xs flex space-x-2">
+        <div tw="pl-10 text-xs flex space-x-1 mb-3 lg:(pl-44 text-xs flex space-x-2)">
           <Link href="/">
             <p tw="cursor-pointer">Home</p>
           </Link>
@@ -51,8 +51,8 @@ const SupportError = () => {
           <div>{'>'}</div>
           <p tw="text-purple-600">CONTACT SUPPORT</p>
         </div>
-        <div tw="flex flex-row pl-44 pr-44 pb-24 mt-2 w-auto space-x-16">
-          <div tw="[>div]:( pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full)">
+        <div tw="pl-10 pr-10 flex space-x-1 lg:(pl-44 mt-2 pb-4 w-auto flex flex-row space-x-16)">
+          <div tw="hidden md:(block) lg:([>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full))">
             <div tw="bg-purple-100">
               <Link href="../HelpBoxes/Errors">
                 <label tw="cursor-pointer">ERRORS WITH ORDERS</label>
@@ -90,8 +90,7 @@ const SupportError = () => {
             </div>
           </div>
           <br></br>
-
-          <div tw=" [>div]:(space-x-1 mb-1) flex flex-col mx-auto pr-20 pt-4 pl-10 rounded-2xl">
+          <div tw=" [>div]:(space-x-1 mb-1) flex flex-col mx-auto lg:(pr-20 pt-4 pl-10) rounded-2xl">
             <div>
               <input
                 name="first"
@@ -155,11 +154,14 @@ const SupportError = () => {
             <div tw="flex justify-between">
               <button
                 onClick={submitHandler}
-                tw="border p-1 pr-4 pl-4 rounded-lg bg-purple-600 text-white"
+                tw="text-white bg-purple-600 flex justify-center items-center border rounded-2xl text-xs p-2 pr-4 pl-4 lg:(text-sm p-3 pr-8 pl-8)"
               >
                 Next
               </button>
-              <button onClick={clearHandler} tw="text-purple-600">
+              <button
+                onClick={clearHandler}
+                tw="rounded-sm text-xs p-2 pl-4 pt-3 lg:(text-sm pl-11) text-purple-600"
+              >
                 Clear choices
               </button>
             </div>

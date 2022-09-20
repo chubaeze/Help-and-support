@@ -1,15 +1,15 @@
 import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import 'twin.macro'
-import Head from '/components/Head'
+import HeadLess from '../../components/HeadNoSearch'
 
 const SupportAccount = () => {
   return (
     <Fragment>
-      <Head />
-      <div tw="max-w-screen-2xl mx-auto pb-72 bg-neutral">
+      <HeadLess />
+      <div tw="max-w-screen-2xl mx-auto bg-neutral lg:(pb-10)">
         <br></br>
-        <div tw="pl-44 text-xs flex space-x-2">
+        <div tw="pl-10 text-xs flex space-x-1 mb-3 lg:(pl-44 text-xs flex space-x-2)">
           <Link href="/">
             <p tw="cursor-pointer">Home</p>
           </Link>
@@ -18,8 +18,8 @@ const SupportAccount = () => {
           <div>{'>'}</div>
           <p tw="text-purple-600">CONTACT SUPPORT</p>
         </div>
-        <div tw="mt-2 pl-44 pr-44 pb-24 flex w-auto">
-          <div tw="[>div]:(border pl-5 pr-10 pb-4 pt-4 rounded-xl w-full)">
+        <div tw="pl-10 pr-10 flex space-x-1 lg:(pl-44 mt-2 pb-4 w-auto flex flex-row space-x-16)">
+          <div tw="hidden md:(block) lg:([>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full))">
             <div>
               <Link href="../HelpBoxes/Errors">
                 <label tw="cursor-pointer">ERRORS WITH ORDERS</label>
@@ -59,10 +59,12 @@ const SupportAccount = () => {
           <br></br>
 
           <div>
-            <div tw="flex justify-center items-center mt-5 text-2xl font-bold">
-              What part of Account & Log In do you need assistance in?
+            <div tw="flex justify-center items-center text-center lg:(mt-5 text-2xl) font-bold">
+              <h3>
+                What part of Account {'&'} Log In do you need assistance in?
+              </h3>
             </div>
-            <div tw=" [>div]:(w-44 flex items-center justify-center border cursor-pointer p-7 rounded-xl bg-white) gap-2 p-20 pt-10 grid grid-cols-1 md:(grid-cols-2 grid-rows-2) lg:(grid-cols-4 grid-rows-2)">
+            <div tw=" [>div]:(w-44 flex items-center justify-center border cursor-pointer p-7 rounded-xl bg-white) gap-2 p-20 pt-10 grid grid-cols-1 md:(grid-cols-2 grid-rows-2) lg:([>div]:(w-36 flex items-center justify-center border cursor-pointer p-3 rounded-xl bg-white ) grid-cols-4 grid-rows-2)">
               <Link href="../HelpBoxes/AccountBoxes/Recover">
                 <div>
                   <h2 tw="text-sm font-bold ">Recover Password</h2>

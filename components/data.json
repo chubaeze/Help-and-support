@@ -1,0 +1,230 @@
+[ {
+      "title": "Vendor Not Responding",
+      "link": "./HelpBoxes/Vendor",
+      "category": "categories"
+    },
+    {
+      "title": "Account & Login",
+      "link": "./HelpBoxes/Account",
+      "category": "categories"
+    },
+    {
+      "title": "Refunds & Complaints",
+      "link": "./HelpBoxes/Refunds",
+      "category": "categories"
+    },
+    {
+      "title": "Delays in Fulfilment",
+      "link": "./HelpBoxes/Delays",
+      "category": "categories"
+    },
+    {
+      "title": "Errors with Orders",
+      "link": "./HelpBoxes/Errors",
+      "category": "categories"
+    },
+    {
+      "title": "Submit Queries",
+      "link": "./HelpBoxes/Submit",
+      "category": "categories"
+    },
+    {
+      "title": "FAQs",
+      "link": "./HelpBoxes/FAQ",
+      "category": "categories"
+    },
+    {
+      "title": "Contact Support",
+      "link": "./Support/SupportVendor",
+      "category": "Vendor not Responding"
+    },
+    {
+      "title": "Contact Support",
+      "link": "./Support/SupportAccount",
+      "category": "Account & Login"
+    },
+    {
+      "title": "Contact Support",
+      "link": "./Support/SupportRefund",
+      "category": "Refunds & Complaints"
+    },
+    {
+      "title": "Contact Support",
+      "link": "./Support/SupportDelay",
+      "category": "Delays in Fulfilment"
+    },
+    {
+      "title": "Contact Support",
+      "link": "./Support/SupportError",
+      "category": "Errors with Orders"
+    },
+    {
+      "title": "Recover Password",
+      "link": "./HelpBoxes/AccountBoxes/Recover",
+      "category": "Account & Login"
+    },
+    {
+      "title": "Log In Details",
+      "link": "./HelpBoxes/AccountBoxes/Log",
+      "category": "Account & Log"
+    },
+    {
+      "title": "Payment Details",
+      "link": "./HelpBoxes/AccountBoxes/Pay",
+      "category": "Account & Log"
+    },
+    {
+      "title": "Manage Account",
+      "link": "./HelpBoxes/AccountBoxes/Manage",
+      "category": "Account & Log"
+    },
+    {
+      "title": "Article 1",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/ErrorArticles/ArticleOne",
+      "category": "Errors with Orders"
+    },
+    {
+      "title": "Article 2",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/ErrorArticles/ArticleTwo",
+      "category": "Errors with Orders"
+    },
+    {
+      "title": "Article 3",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/ErrorArticles/ArticleThree",
+      "category": "Errors with Orders"
+    },
+    {
+      "title": "Article 4",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/ErrorArticles/ArticleFour",
+      "category": "Errors with Orders"
+    },
+    {
+      "title": "Article 5",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/ErrorArticles/ArticleFive",
+      "category": "Errors with Orders"
+    },
+    {
+      "title": "Article 6",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/ErrorArticles/ArticleSix",
+      "category": "Errors with Orders"
+    },
+    {
+      "title": "Article 1",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/VendorArticles/ArticleOne",
+      "category": "Vendor not Responding"
+    },
+    {
+      "title": "Article 2",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/VendorArticles/ArticleTwo",
+      "category": "Vendor not Responding"
+    },
+    {
+      "title": "Article 3",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/VendorArticles/ArticleThree",
+      "category": "Vendor not Responding"
+    },
+    {
+      "title": "Article 4",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/VendorArticles/ArticleFour",
+      "category": "Vendor not Responding"
+    },
+    {
+      "title": "Article 5",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/VendorArticles/ArticleFive",
+      "category": "Vendor not Responding"
+    },
+    {
+      "title": "Article 6",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/VendorArticles/ArticleSix",
+      "category": "Vendor not Responding"
+    },
+    {
+      "title": "Article 1",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/DelayArticles/ArticleOne",
+      "category": "Delays in Fulfilment"
+    },
+    {
+      "title": "Article 2",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/DelayArticles/ArticleTwo",
+      "category": "Delays in Fulfilment"
+    },
+    {
+      "title": "Article 3",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/DelayArticles/ArticleThree",
+      "category": "Delays in Fulfilment"
+    },
+    {
+      "title": "Article 4",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/DelayArticles/ArticleFour",
+      "category": "Delays in Fulfilment"
+    },
+    {
+      "title": "Article 5",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/DelayArticles/ArticleFive",
+      "category": "Delays in Fulfilment"
+    },
+    {
+      "title": "Article 6",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/DelayArticles/ArticleSix",
+      "category": "Delays in Fulfilment"
+    },
+    {
+      "title": "Article 1",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/RefundArticles/ArticleOne",
+      "category": "Refunds & Complaints"
+    },
+    {
+      "title": "Article 2",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/RefundArticles/ArticleTwo",
+      "category": "Refunds & Complaints"
+    },
+    {
+      "title": "Article 3",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/RefundArticles/ArticleThree",
+      "category": "Refunds & Complaints"
+    },
+    {
+      "title": "Article 4",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/RefundArticles/ArticleFour",
+      "category": "Refunds & Complaints"
+    },
+    {
+      "title": "Article 5",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/RefundArticles/ArticleFive",
+      "category": "Refunds & Complaints"
+    },
+    {
+      "title": "Article 6",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/RefundArticles/ArticleSix",
+      "category": "Refunds & Complaints"
+    },
+    {
+      "title": "Article 1",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/AccountArticles/ArticleOne",
+      "category": "Account & Login"
+    },
+    {
+      "title": "Article 2",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/AccountArticles/ArticleTwo",
+      "category": "Account & Login"
+    },
+    {
+      "title": "Article 3",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/AccountArticles/ArticleThree",
+      "category": "Account & Login"
+    },
+    {
+      "title": "Article 4",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/AccountArticles/ArticleFour",
+      "category": "Account & Login"
+    },
+    {
+      "title": "Article 5",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/AccountArticles/ArticleFive",
+      "category": "Account & Login"
+    },
+    {
+      "title": "Article 6",
+      "link": "./HelpBoxes/AccountBoxes/ArticleBoxes/AccountArticles/ArticleSix",
+      "category": "Account & Login"
+    }]

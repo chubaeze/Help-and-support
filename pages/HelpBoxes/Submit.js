@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import Link from 'next/link'
 import 'twin.macro'
-import Head from '/components/Head'
+import HeadLess from '../../components/HeadNoSearch'
 
 const Submit = () => {
   const initialValues = {
@@ -31,18 +31,18 @@ const Submit = () => {
 
   return (
     <Fragment>
-      <Head />
-      <div tw="max-w-screen-2xl mx-auto pb-44 bg-neutral">
+      <HeadLess />
+      <div tw="max-w-screen-2xl mx-auto bg-neutral lg:(pb-10) ">
         <br></br>
-        <div tw="pl-44 text-xs flex space-x-2">
+        <div tw="pl-10 text-xs flex space-x-1 lg:(pl-44 text-xs flex space-x-2)">
           <Link href="/">
             <p tw="cursor-pointer">Home</p>
           </Link>
           <div>{'>'}</div>
           <p tw="text-purple-600">SUBMIT QUERIES</p>
         </div>
-        <div tw="flex flex-row pl-44 pr-44 pb-32 mt-2 w-auto space-x-32">
-          <div tw="[>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full)">
+        <div tw="pl-10 pr-10 lg:(flex flex-row pl-44 pr-44 pb-4 mt-2 w-auto space-x-32)">
+          <div tw="hidden md:(block) lg:([>div]:(pl-5 pr-10 pb-4 pt-4 border rounded-xl w-full))">
             <div>
               <Link href="./Errors">
                 <label tw="cursor-pointer">ERRORS WITH ORDERS</label>
@@ -80,14 +80,14 @@ const Submit = () => {
             </div>
           </div>
           <br></br>
-          <div tw="flex border mx-auto pr-20 pt-4 pl-10 pb-10 rounded-2xl">
+          <div tw="flex flex-wrap border mx-auto pr-4 pt-4 pl-5 pb-10 rounded-2xl">
             <form onSubmit={submitHandler}>
               <label>Name</label>
               <input
                 name="name"
                 value={formValues.name}
                 type="text"
-                tw="border p-1 pr-2 pl-2 rounded-lg w-full bg-white hover:border-purple-600 focus:outline-none focus:border-purple-600"
+                tw="flex flex-wrap border bg-white w-[100%] hover:border-purple-600 focus:outline-none focus:border-purple-600 p-1 pr-0 pl-2 rounded-lg lg:(border p-1 pr-2 pl-2 rounded-lg w-full bg-white hover:border-purple-600 focus:outline-none focus:border-purple-600)"
                 required
                 onChange={changeHandler}
               ></input>
@@ -98,7 +98,7 @@ const Submit = () => {
                 name="email"
                 value={formValues.email}
                 type="email"
-                tw="border rounded-lg p-1 pr-2 pl-2 w-full bg-white hover:border-purple-600 focus:outline-none focus:border-purple-600"
+                tw="flex flex-wrap border bg-white w-[100%] hover:border-purple-600 focus:outline-none focus:border-purple-600 p-1 pr-0 pl-2 rounded-lg lg:(border p-1 pr-2 pl-2 rounded-lg w-full bg-white hover:border-purple-600 focus:outline-none focus:border-purple-600)"
                 required
                 onChange={changeHandler}
               ></input>
@@ -109,7 +109,7 @@ const Submit = () => {
                 name="platform"
                 value={formValues.platform}
                 type="text"
-                tw="border rounded-lg p-1 pr-2 pl-2 w-full bg-white hover:border-purple-600 focus:outline-none focus:border-purple-600"
+                tw="flex flex-wrap border bg-white w-[100%] hover:border-purple-600 focus:outline-none focus:border-purple-600 p-1 pr-0 pl-2 rounded-lg lg:(border p-1 pr-2 pl-2 rounded-lg w-full bg-white hover:border-purple-600 focus:outline-none focus:border-purple-600)"
                 required
                 onChange={changeHandler}
               ></input>
@@ -120,18 +120,18 @@ const Submit = () => {
                 name="query"
                 value={formValues.query}
                 type="text"
-                tw="border rounded-lg w-full p-1 pr-2 pl-2 h-28 bg-white align-top hover:border-purple-600 focus:outline-none focus:border-purple-600"
+                tw="hover:border-purple-600 border rounded-lg w-[100%] p-1 pl-2 h-20 focus:outline-none focus:border-purple-600 lg:(border rounded-lg w-full p-1 pr-2 pl-2 h-28 bg-white align-top hover:border-purple-600 focus:outline-none focus:border-purple-600)"
                 required
                 onChange={changeHandler}
               ></input>
               <br></br>
               <br></br>
-              <div tw="flex space-x-36">
-                <div tw="text-white bg-purple-600 flex justify-center items-center border p-3 pr-8 pl-8 rounded-2xl text-sm">
+              <div tw="flex w-full justify-between">
+                <div tw="text-[10px] p-2 text-white bg-purple-600 flex justify-center items-center border rounded-2xl lg:(text-white bg-purple-600 flex justify-center items-center border p-3 pr-8 pl-8 rounded-2xl text-sm)">
                   <button>Submit</button>
                 </div>
                 <br></br>
-                <div tw=" pl-8 rounded-sm p-4 text-sm text-purple-600">
+                <div tw="text-[10px] rounded-sm p-3 lg:(pl-8 rounded-sm p-4 text-sm text-purple-600)">
                   <button onClick={clearHandler}>Clear form</button>
                 </div>
               </div>
